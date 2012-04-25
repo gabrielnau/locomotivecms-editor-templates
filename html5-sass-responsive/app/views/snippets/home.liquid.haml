@@ -1,0 +1,92 @@
+.container
+  .row
+    .twelve.columns
+      %h2 Welcome to Foundation
+      %p This is version 2.2.1 released on April 10, 2012
+      %hr/
+  .row
+    .eight.columns
+      %h3 The Grid
+      / Grid Example
+      .row
+        .twelve.columns
+          .panel
+            %p This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
+      .row
+        .six.columns
+          .panel
+            %p Six columns
+        .six.columns
+          .panel
+            %p Six columns
+      .row
+        .four.columns
+          .panel
+            %p Four columns
+        .four.columns
+          .panel
+            %p Four columns
+        .four.columns
+          .panel
+            %p Four columns
+      %h3 Tabs
+      %dl.tabs
+        %dd
+          %a.active{:href => "#simple1"} Simple Tab 1
+        %dd
+          %a{:href => "#simple2"} Simple Tab 2
+        %dd
+          %a{:href => "#simple3"} Simple Tab 3
+      %ul.tabs-content
+        %li#simple1Tab.active This is simple tab 1's content. Pretty neat, huh?
+        %li#simple2Tab This is simple tab 2's content. Now you see it!
+        %li#simple3Tab This is simple tab 3's content. It's, you know...okay.
+      %h3 Buttons
+      .row
+        .six.columns
+          %p
+            %a.small.blue.button{:href => "#"} Small Blue Button
+          %p
+            %a.blue.button{:href => "#"} Medium Blue Button
+          %p
+            %a.large.blue.button{:href => "#"} Large Blue Button
+          %p
+            %a.nice.radius.small.blue.button{:href => "#"} Nice Blue Button
+          %p
+            %a.nice.radius.blue.button{:href => "#"} Nice Blue Button
+          %p
+            %a.nice.radius.large.blue.button{:href => "#"} Nice Blue Button
+        .six.columns
+          %p
+            %a.small.red.button{:href => "#"} Small Red Button
+          %p
+            %a.green.button{:href => "#"} Medium Green Button
+          %p
+            %a.large.white.button{:href => "#"} Large White Button
+          %p
+            %a.nice.radius.small.red.button{:href => "#"} Nice Red Button
+          %p
+            %a.nice.radius.green.button{:href => "#"} Nice Green Button
+          %p
+            %a.nice.radius.large.white.button{:href => "#"} Nice White Button
+    .four.columns
+      %h4 Getting Started
+      %p We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
+      %h4 Other Resources
+      %p Once you've exhausted the fun in this document, you should check out:
+      %ul.disc
+        %li
+          %a{:href => "http://foundation.zurb.com/docs"} Foundation Documentation
+          = succeed "Everything" do
+            %br/
+          you need to know about using the framework.
+        %li
+          %a{:href => "http://github.com/zurb/foundation"} Foundation on Github
+          = succeed "Latest" do
+            %br/
+          code, issue reports, feature requests and more.
+        %li
+          %a{:href => "http://twitter.com/foundationzurb"} @foundationzurb
+          = succeed "Ping" do
+            %br/
+          us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).

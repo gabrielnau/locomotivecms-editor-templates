@@ -1,0 +1,63 @@
+!!!
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ Consider adding a manifest.appcache: h5bp.com/d/Offline
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  
+  %head
+    %meta{ :charset => "utf-8" }
+    / More info: h5bp.com/i/378
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    / Set the viewport width to device width for mobile
+    %meta{ :name => "viewport", :content => "width=device-width" }
+    
+    %title {{ page.title }}
+    %meta{ :content => "{{ page.meta_description }}", :name => "description" }
+    %meta{ :content => "{{ page.meta_keywords }}", :name => "keywords" }
+
+    / HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      %script{ :src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+
+    -# since there is a Css reset here, place this stylesheet before Foundation stylesheet
+    {{ 'application' | stylesheet_tag }} 
+    {{ 'foundation' | stylesheet_tag }}
+    / Foundation Css for IE
+    /[if lt IE 9]
+      {{ 'ie' | stylesheet_tag }}
+    
+    / Modernizr custom build for Foundation
+    {{ 'modernizr.foundation' | javascript_tag }}
+    
+    / Inline editor tag have to be the last tag of the <head>
+    {% inline_editor %}
+  %body
+    / 
+      Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.         
+      chromium.org/developers/how-tos/chrome-frame-getting-started
+    / [if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    
+    %header
+      -# the header here 
+      
+    {% block main %}
+    {% include 'home' %}
+    {% endblock %}
+    
+    %footer
+      -# the footer here
+    
+    
+    
+    / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline  
+    -#%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    %script window.jQuery || document.write('<script src="/javascripts/{{ 'jquery-1.7.1.min.js' | javascript_url }}"><\/script>')
+    / Your application javascript at the bottom of the page for faster loading
+    {{ 'foundation' | javascript_tag }}
+    {{ 'application' | javascript_tag }}
+    
+    -# {% google_analytics 'your code' %}

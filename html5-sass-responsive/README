@@ -1,0 +1,29 @@
+Templates for LocomotiveEditor v2
+
+html5-sass-responsive : 
+
+Default site template forked from http://github.com/locomotivecms/default-site-template
+- SASS / Compass
+>> compass css reset ( that's why your application css has to be BEFORE foundation css)
+- HTML5 goodness forked from http://html5boilerplate.com
+- Responsive design using the Foundation Framework v2.2 http://foundation.zurb.com/
+
+Install :
+
+1 - fork this in a folder aimed to contain locomotive editor templates
+2 - check if you are able to list the template : 
+
+locomotive_editor list_templates --lib=./site_templates/html5-sass-responsive.rb
+
+you should see this : 
+
+4 template(s) found:
+	- empty: this is the default template, very minimal
+	- twitter_bootstrap: includes all the files provided by the Twitter Bootstrap package as well as an index page using it
+	- twitter_bootstrap_haml: includes all the files provided by the Twitter Bootstrap package as well as an index page in HAML using it
+	- html5_sass_responsive:  Html5 - SASS - Responsive template
+	
+	
+3 - create your LocomotiveEditor site using this template : 
+
+locomotive_editor create -n another_site --template=html5_sass_responsive --lib=./site_templates/html5-sass-responsive.rb
